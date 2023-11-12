@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelin Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!---------------------Home---------------------------->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/loooo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Full Stack Developer</p>
+                <h1>Hi,I'm <span>Angelin SV </span><br>from India</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-----------------------About-------------------------->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/about1.png" id="aboutpho">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Im a software developer with a passion for creating innovative
+                       and efficient solutions.<br> With a strong foundation in programming languages
+                       and problem-solving skills, I thrive <br>in turning complex challenges into
+                       elegant software solutions. From crafting clean and<br> maintainable code to
+                       collaborating within teams, I am committed to continuous learning<br> and 
+                       staying up-to-date with the latest industry trends. My goal is to
+                       contribute to<br> meaningful projects and deliver software that not 
+                       only meets but exceeds expectations.</p>
+                       <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                       </div>
+                       <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Python,C++</span><br>Backend Development</li>
+                            <li><span>HTML,CSS,JavaScript</span><br>Frontend Development</li>
+                            <li><span>Testing,PPT,Editing</span><br>Others</li>
+                        </ul>
+                       </div>
+                       <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023</span><br>BCA from St Claret College</li>
+                            <li><span>2020</span><br>PCMC from SchoenStatt St Mary's PU College</li>
+                            <li><span>2018</span><br>SSLC from SchoenStatt St Mary's High School</li>
+                        </ul>
+                       </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-------------------------Portfolio---------------------------------->
+
+<div id="portfolio">
+    <div class="container">
+          <h1 class="sub-title">My Work</h1>
+          <div class="work-list">
+            <div class="work">
+                <img src="images/wine7.jpg">
+                <div class="layer">
+                    <h3>Wine Quality Prediction</h3>
+                    <p>This Web application predicts the quality of wine with the help of Random Forest Classifier.
+                    Check it on Github.</p>
+                    <a href="https://github.com/Angelin-SV/wine-quality"><i class="fas fa-external-link-alt"></i></a> 
+                </div>
+          </div>
+          <div class="work">
+            <img src="images/gfb.jpg">
+            <div class="layer">
+                <h3>Bug Tracking Management</h3>
+                <p>This application keeps track of the active or inactive bug.
+                Check it on Github.</p>
+                <a href="https://github.com/Angelin-SV/Bug-Management-System"><i class="fas fa-external-link-alt"></i></a> 
+            </div>
+          </div>
+
+          </div>
+
+          <a href="https://github.com/Angelin-SV" class="btn">See more</a>
+
+
+    </div>
+</div>
+
+<!-------------------------Contact---------------------------------->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-paper-plane"></i>angelin0sv@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91 9591498227</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com/its___my___username?igshid=NG92cGdld2JzeGtl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/angelin-sv/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/johny.john.75098364/"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <a href="images/ANGELIN SV.pdf" download class="btn btn2" id="batt">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required/>
+                    <input type="email" name="Email" placeholder="Your Email" required/>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="copyright">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> Angelin. </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------------Java Script---------------------------------->
+
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        var sidemenu=document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+
+        function closemenu(){
+            sidemenu.style.right="-250px";
+        }
+    
+    </script>
+    
+    <script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbw0TS-tAxU2DY7s1dx9pQYenmDviN0cOutiRCtGYlmfnaXmWPbTakHgcLJ5U4tqNjsOzQ/exec"
+  const form = document.forms['submit-to-google-sheet']
+  const msg=document.getElementById("msg")
+
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML="Message sent successfully"
+        setTimeout(function(){
+            msg.innerHTML=""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+</body>
+</html>
